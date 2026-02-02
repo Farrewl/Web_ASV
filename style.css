@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* TEMPLATE BACKGROUND */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #2b2929, #717480);
+    color: #333;
+}
+
+/* ANIMASI BACKGROUND FIREFLIES */
+.fireflies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden;
+    pointer-events: none; 
+}
+
+.fireflies li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff66;
+    bottom: -150px; 
+    border-radius: 50%;
+    animation: animateFireflies 25s linear infinite;
+}
+
+.fireflies li:nth-child(1) { left: 25%; width: 10px; height: 10px; animation-delay: 0s; animation-duration: 15s; }
+.fireflies li:nth-child(2) { left: 10%; width: 5px; height: 5px; animation-delay: 2s; animation-duration: 12s; }
+.fireflies li:nth-child(3) { left: 70%; width: 8px; height: 8px; animation-delay: 4s; animation-duration: 18s; }
+.fireflies li:nth-child(4) { left: 40%; width: 6px; height: 6px; animation-delay: 0s; animation-duration: 14s; }
+.fireflies li:nth-child(5) { left: 65%; width: 9px; height: 9px; animation-delay: 0s; animation-duration: 16s; }
+.fireflies li:nth-child(6) { left: 75%; width: 6px; height: 6px; animation-delay: 3s; animation-duration: 13s; }
+.fireflies li:nth-child(7) { left: 35%; width: 8px; height: 8px; animation-delay: 7s; animation-duration: 19s; }
+.fireflies li:nth-child(8) { left: 50%; width: 5px; height: 5px; animation-delay: 15s; animation-duration: 11s; }
+.fireflies li:nth-child(9) { left: 20%; width: 7px; height: 7px; animation-delay: 2s; animation-duration: 17s; }
+.fireflies li:nth-child(10) { left: 85%; width: 10px; height: 10px; animation-delay: 0s; animation-duration: 22s; }
+
+@keyframes animateFireflies {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+/* ANIMASI BACKGROUND FIREFLIES END */
+
+/* TRANSISI LOGIN & REGISTER */
+.form-box.active {
+    display: block;
+    animation: slideFadeIn 0.6s ease-in-out;
+}
+
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* TRANSISI LOGIN & REGISTER END */
+/* TRANSISI HOMEPAGE */
+.page-entry-anim {
+    animation: pageZoomIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-animation: pageZoomIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pageZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px); 
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+/* TRANSISI HOMEPAGE */
+/* TEMPLATE BACKGROUND END */
+
+/* LOGIN REGISTER */
+.container {
+    margin: 0 15px;
+}
+
+.form-box {
+    width: 100%;
+    padding: 450px;
+    padding: 30px;
+    max-width: 500px;
+    max-height: 600px;
+    background: #eaeaea;
+    border-radius: 10px;
+    border-top: 5px solid #0c53ec;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050404;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: #050404;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0c53ec;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p a {
+    color: #0c53ec;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    padding: 12px;
+    background: #ffdddd;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    font-size: 16px;
+    color: #a42834;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* LOGIN REGISTER END */
+
+/* HOMEPAGE */
+nav {
+    width: 98%;
+    padding: 0.5rem 1.5rem;
+    background: #eaeaea;
+    border-radius: 10px;
+    border-bottom: 5px solid #0c53ec;
+    backdrop-filter: blur(15px);
+    margin-bottom: 15px;
+    max-height: 20vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+    background: linear-gradient(to right, #2b2929, #717480);
+    color: #333;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #0c53ec;
+}
+
+.logout {
+    display: flex;
+}
+
+.btn-logout {
+    padding: 0.3rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #e42834;
+    color: #000;
+    box-shadow: 0 0 15px #e42834;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.btn-logout:hover {
+    background: #f42834;
+    box-shadow: 0 0 20px #f42834;
+}
+
+.logo-admin {
+    font-size: 1rem;
+    text-shadow: 0 0 10px #0c53ec;
+    color: #0c53ec;
+}
+
+/* Style untuk Container Status (Agar Posisi Tepat di Tengah Layar) */
+.status-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+/* Style Box Statusnya */
+.status-pill {
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #000; /* Border Hitam */
+    color: #fff; /* Tulisan Putih (kecuali kuning) */
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* Warna-Warna Status */
+.status-pill.online {
+    background-color: #28a745; /* Hijau */
+    color: white;
+}
+
+.status-pill.connecting {
+    background-color: #ffc107; /* Kuning */
+    color: #000; /* Tulisan hitam biar terbaca */
+}
+
+.status-pill.disconnected {
+    background-color: #dc3545; /* Merah */
+    color: white;
+}
+
+/* Container Utama */
+/* --- LAYOUT UTAMA ADMIN --- */
+
+.content {
+    width: 98%;             
+    height: 86vh;           
+    background: #eaeaea;    
+    border-radius: 10px;
+    border-top: 5px solid #0c53ec;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    /* Kolom kiri dan kanan seimbang */
+    grid-template-columns: 5fr 2fr 3fr; 
+    /* Baris pertama (Content 1) tingginya 120px, sisanya otomatis */
+    grid-template-rows: 100px auto; 
+    gap: 15px; /* Jarak antar blok utama (1, 2, 3) */
+    padding: 15px; /* Jarak dari pinggir frame utama ke kotak-kotak dalam */
+}
+
+/* --- CONTENT 1 (8 KOTAK BERJEJER) --- */
+.content-1 {
+    grid-column: 1 / -1; /* Span dari awal sampai akhir */
+    /* ...style lama content-1 tetap sama... */
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    padding: 15px;
+    align-items: center;
+}
+
+.c1-box {
+    background: #0c53ec; /* Warna biru */
+    color: white;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.c1-box:hover {
+    transform: translateY(-3px); /* Efek naik dikit pas di hover */
+}
+
+/* --- CONTENT 2 (4 KOTAK: 2 ATAS, 2 BAWAH) --- */
+.content-2 {
+    /* Hapus grid-column span jika ada sebelumnya, biarkan default */
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    
+    /* Jika content-2 isinya kotak-kotak kecil (A,B,C,D), biarkan grid di dalamnya */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.c2-box {
+    background: #FE7743; /* Warna Orange */
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Content Middle (Tengah - 20%) - NEW */
+.content-middle {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+}
+
+/* --- CONTENT 3 (GAMBAR 30% + TEKS SCROLL 70%) --- */
+.content-3 {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+.c3-image-area {
+    height: 30%; /* Bagian atas 30% */
+    background: #333; /* Warna placeholder gambar */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('model-kapal-removebg-preview.png'); /* Contoh jika ada gambar */
+    background-size: cover;
+    background-position: center;
+}
+
+.c3-text-area {
+    height: 70%; /* Bagian bawah 70% */
+    padding: 20px; /* Jarak teks dari pinggir kotak */
+    overflow-y: auto; /* SCROLL AKTIF jika teks kepanjangan */
+    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Styling Scrollbar Khusus (Opsional biar cantik) */
+.c3-text-area::-webkit-scrollbar {
+    width: 8px;
+}
+.c3-text-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.c3-text-area::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.c3-text-area::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+/* Container Utama  End*/
+
+/* HOMEPAGE END */
