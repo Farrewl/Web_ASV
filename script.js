@@ -14,20 +14,16 @@ function showForm(formId) {
     activeFormInputs.forEach(input => input.value = '');
 }
 
-// Tambahkan simulasi status di bagian bawah file script.js
 document.addEventListener("DOMContentLoaded", function() {
     const statusEl = document.getElementById('status-indicator');
     
-    // Hanya jalankan jika elemen ada (artinya sedang di halaman admin)
     if(statusEl) {
-        // Simulasi: Setelah 2 detik, ubah dari Connecting ke Online
         setTimeout(() => {
             statusEl.textContent = "ONLINE";
             statusEl.classList.remove('connecting');
             statusEl.classList.add('online');
-        }, 2000); // 2000ms = 2 detik
+        }, 2000);
 
-        // Opsional: Klik status untuk ganti-ganti (Testing purpose)
         statusEl.addEventListener('click', () => {
             if(statusEl.classList.contains('online')) {
                 statusEl.className = 'status-pill disconnected';

@@ -328,18 +328,15 @@ nav {
     margin-right: auto;
 
     display: grid;
-    /* Kolom kiri dan kanan seimbang */
     grid-template-columns: 5fr 2fr 3fr; 
-    /* Baris pertama (Content 1) tingginya 120px, sisanya otomatis */
     grid-template-rows: 100px auto; 
-    gap: 15px; /* Jarak antar blok utama (1, 2, 3) */
-    padding: 15px; /* Jarak dari pinggir frame utama ke kotak-kotak dalam */
+    gap: 15px;
+    padding: 15px;
 }
 
-/* --- CONTENT 1 (8 KOTAK BERJEJER) --- */
+/* --- CONTENT 1 --- */
 .content-1 {
-    grid-column: 1 / -1; /* Span dari awal sampai akhir */
-    /* ...style lama content-1 tetap sama... */
+    grid-column: 1 / -1; 
     background: #fff;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -351,32 +348,50 @@ nav {
 }
 
 .c1-box {
-    background: #0c53ec; /* Warna biru */
+    background: #0c53ec; 
     color: white;
     height: 100%;
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 1.2rem;
+    gap: 5px;
+    padding: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.2s;
 }
 
 .c1-box:hover {
-    transform: translateY(-3px); /* Efek naik dikit pas di hover */
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #0051ff;
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
 }
 
-/* --- CONTENT 2 (4 KOTAK: 2 ATAS, 2 BAWAH) --- */
+.c1-box img {
+    width: 35px; 
+    height: 35px; 
+    object-fit: contain;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+
+.c1-box span {
+    font-size: 13px; /* Ukuran font disesuaikan agar muat */
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* --- CONTENT 2 --- */
 .content-2 {
-    /* Hapus grid-column span jika ada sebelumnya, biarkan default */
     background: #fff;
     border-radius: 8px;
     border: 1px solid #ccc;
     padding: 10px;
     
-    /* Jika content-2 isinya kotak-kotak kecil (A,B,C,D), biarkan grid di dalamnya */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -384,7 +399,7 @@ nav {
 }
 
 .c2-box {
-    background: #FE7743; /* Warna Orange */
+    background: #FE7743; 
     color: white;
     border-radius: 8px;
     display: flex;
@@ -395,7 +410,6 @@ nav {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Content Middle (Tengah - 20%) - NEW */
 .content-middle {
     background: #fff;
     border-radius: 8px;
@@ -408,7 +422,7 @@ nav {
     color: #555;
 }
 
-/* --- CONTENT 3 (GAMBAR 30% + TEKS SCROLL 70%) --- */
+/* --- CONTENT 3 --- */
 .content-3 {
     background: #fff;
     border-radius: 8px;
@@ -419,27 +433,26 @@ nav {
 }
 
 .c3-image-area {
-    height: 30%; /* Bagian atas 30% */
-    background: #333; /* Warna placeholder gambar */
+    height: 30%; 
+    background: #333;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('model-kapal-removebg-preview.png'); /* Contoh jika ada gambar */
+    background-image: url('assets/model-kapal-removebg-preview.png');
     background-size: cover;
     background-position: center;
 }
 
 .c3-text-area {
-    height: 70%; /* Bagian bawah 70% */
-    padding: 20px; /* Jarak teks dari pinggir kotak */
-    overflow-y: auto; /* SCROLL AKTIF jika teks kepanjangan */
+    height: 70%;
+    padding: 20px;
+    overflow-y: auto; 
     text-align: justify;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-/* Styling Scrollbar Khusus (Opsional biar cantik) */
 .c3-text-area::-webkit-scrollbar {
     width: 8px;
 }
