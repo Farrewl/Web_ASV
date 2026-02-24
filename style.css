@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-/* TEMPLATE BACKGROUND */
+/* --- 1. TEMPLATE UTAMA & LATAR BELAKANG --- */
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +15,20 @@ body {
     min-height: 100vh;
     background: linear-gradient(to right, #2b2929, #717480);
     color: #333;
+    transition: background 0.5s ease;
 }
 
-/* ANIMASI BACKGROUND FIREFLIES */
+/* Animasi Masuk Halaman */
+.page-entry-anim {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 2. ANIMASI FIREFLIES (Latar Belakang) --- */
 .fireflies {
     position: fixed;
     top: 0;
@@ -41,431 +52,209 @@ body {
     animation: animateFireflies 25s linear infinite;
 }
 
-.fireflies li:nth-child(1) { left: 25%; width: 10px; height: 10px; animation-delay: 0s; animation-duration: 15s; }
-.fireflies li:nth-child(2) { left: 10%; width: 5px; height: 5px; animation-delay: 2s; animation-duration: 12s; }
-.fireflies li:nth-child(3) { left: 70%; width: 8px; height: 8px; animation-delay: 4s; animation-duration: 18s; }
-.fireflies li:nth-child(4) { left: 40%; width: 6px; height: 6px; animation-delay: 0s; animation-duration: 14s; }
-.fireflies li:nth-child(5) { left: 65%; width: 9px; height: 9px; animation-delay: 0s; animation-duration: 16s; }
-.fireflies li:nth-child(6) { left: 75%; width: 6px; height: 6px; animation-delay: 3s; animation-duration: 13s; }
-.fireflies li:nth-child(7) { left: 35%; width: 8px; height: 8px; animation-delay: 7s; animation-duration: 19s; }
-.fireflies li:nth-child(8) { left: 50%; width: 5px; height: 5px; animation-delay: 15s; animation-duration: 11s; }
-.fireflies li:nth-child(9) { left: 20%; width: 7px; height: 7px; animation-delay: 2s; animation-duration: 17s; }
-.fireflies li:nth-child(10) { left: 85%; width: 10px; height: 10px; animation-delay: 0s; animation-duration: 22s; }
-
 @keyframes animateFireflies {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-}
-/* ANIMASI BACKGROUND FIREFLIES END */
-
-/* TRANSISI LOGIN & REGISTER */
-.form-box.active {
-    display: block;
-    animation: slideFadeIn 0.6s ease-in-out;
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
 }
 
-@keyframes slideFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* TRANSISI LOGIN & REGISTER END */
-/* TRANSISI HOMEPAGE */
-.page-entry-anim {
-    animation: pageZoomIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    -webkit-animation: pageZoomIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
+/* Tambahkan variasi posisi fireflies */
+.fireflies li:nth-child(1) { left: 25%; width: 6px; height: 6px; animation-delay: 0s; }
+.fireflies li:nth-child(2) { left: 10%; width: 4px; height: 4px; animation-delay: 2s; animation-duration: 12s; }
+.fireflies li:nth-child(3) { left: 70%; width: 5px; height: 5px; animation-delay: 4s; }
+.fireflies li:nth-child(4) { left: 40%; width: 8px; height: 8px; animation-delay: 0s; animation-duration: 18s; }
+.fireflies li:nth-child(5) { left: 65%; width: 4px; height: 4px; animation-delay: 0s; }
 
-@keyframes pageZoomIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.95) translateY(20px); 
-        filter: blur(5px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-        filter: blur(0);
-    }
-}
-/* TRANSISI HOMEPAGE */
-/* TEMPLATE BACKGROUND END */
-
-/* LOGIN REGISTER */
+/* --- 3. LOGIN & REGISTER FORM --- */
 .container {
-    margin: 0 15px;
-}
-
-.form-box {
-    width: 100%;
-    padding: 450px;
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
-    max-width: 500px;
-    max-height: 600px;
-    background: #eaeaea;
-    border-radius: 10px;
-    border-top: 5px solid #0c53ec;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
-    display: none;
-}
-
-.form-box.active {
-    display: block;
-}
-
-h2 {
-    font-size: 34px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 350px;
     text-align: center;
-    margin-bottom: 20px;
-    color: #050404;
 }
 
-input {
+.form-box h2 { margin-bottom: 20px; color: #0c53ec; }
+.form-box input {
     width: 100%;
-    padding: 12px;
-    background: #050404;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background: #0c53ec;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 500;
-    margin-bottom: 20px;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-}
-
-p {
-    font-size: 14.5px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-p a {
-    color: #0c53ec;
-    text-decoration: none;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    padding: 12px;
-    background: #ffdddd;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    font-size: 16px;
-    color: #a42834;
-    text-align: center;
-    margin-bottom: 20px;
-}
-/* LOGIN REGISTER END */
-
-/* HOMEPAGE */
-nav {
-    width: 98%;
-    padding: 0.5rem 1.5rem;
-    background: #eaeaea;
-    border-radius: 10px;
-    border-bottom: 5px solid #0c53ec;
-    backdrop-filter: blur(15px);
-    margin-bottom: 15px;
-    max-height: 20vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-.body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    min-width: 100%;
-    background: linear-gradient(to right, #2b2929, #717480);
-    color: #333;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #000;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px #0c53ec;
-}
-
-.logout {
-    display: flex;
-}
-
-.btn-logout {
-    padding: 0.3rem 1.2rem;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1rem;
-    background: #e42834;
-    color: #000;
-    box-shadow: 0 0 15px #e42834;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-}
-
-.btn-logout:hover {
-    background: #f42834;
-    box-shadow: 0 0 20px #f42834;
-}
-
-.logo-admin {
-    font-size: 1rem;
-    text-shadow: 0 0 10px #0c53ec;
-    color: #0c53ec;
-}
-
-/* Style untuk Container Status (Agar Posisi Tepat di Tengah Layar) */
-.status-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-}
-
-/* Style Box Statusnya */
-.status-pill {
-    padding: 5px 20px;
-    border-radius: 20px;
-    border: 2px solid #000; /* Border Hitam */
-    color: #fff; /* Tulisan Putih (kecuali kuning) */
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-/* Warna-Warna Status */
-.status-pill.online {
-    background-color: #28a745; /* Hijau */
-    color: white;
-}
-
-.status-pill.connecting {
-    background-color: #ffc107; /* Kuning */
-    color: #000; /* Tulisan hitam biar terbaca */
-}
-
-.status-pill.disconnected {
-    background-color: #dc3545; /* Merah */
-    color: white;
-}
-
-/* Container Utama */
-/* --- LAYOUT UTAMA ADMIN --- */
-
-.content {
-    width: 98%;             
-    height: 86vh;           
-    background: #eaeaea;    
-    border-radius: 10px;
-    border-top: 5px solid #0c53ec;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    margin-left: auto;
-    margin-right: auto;
-
-    display: grid;
-    grid-template-columns: 5fr 2fr 3fr; 
-    grid-template-rows: 100px auto; 
-    gap: 15px;
-    padding: 15px;
-}
-
-/* --- CONTENT 1 --- */
-.content-1 {
-    grid-column: 1 / -1; 
-    background: #fff;
-    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
-    padding: 15px;
+    border-radius: 6px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    background: #0c53ec;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form-box button:hover { background: #083eb3; }
+.error-message { color: red; font-size: 0.8rem; margin-bottom: 10px; }
+
+/* --- 4. LAYOUT DASHBOARD (NAV & CONTENT) --- */
+.body {
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-bottom: 4px solid #0c53ec;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: #333; }
+.logo-admin { color: #0c53ec; font-size: 0.9rem; margin-left: 5px; }
+
+.status-pill {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+.disconnected { background: #e74c3c; }
+.online { background: #2ecc71; }
+
+.btn-logout { text-decoration: none; color: #e74c3c; font-weight: bold; font-size: 0.9rem; }
+
+/* Dashboard Grid */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+/* --- 5. BOX STYLING --- */
+.content-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .c1-box {
-    background: #0c53ec; 
+    background: #0c53ec;
     color: white;
-    height: 100%;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 5px;
-    padding: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    cursor: pointer;
+    transition: 0.3s;
 }
+.c1-box:hover { transform: scale(1.03); }
+.c1-box img { width: 40px; margin-bottom: 10px; filter: invert(1); }
 
-.c1-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #0051ff;
-    -webkit-transform: translateY(-3px);
-    -moz-transform: translateY(-3px);
-    -ms-transform: translateY(-3px);
-    -o-transform: translateY(-3px);
-}
-
-.c1-box img {
-    width: 35px; 
-    height: 35px; 
-    object-fit: contain;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
-}
-
-.c1-box span {
-    font-size: 13px; /* Ukuran font disesuaikan agar muat */
-    font-weight: 500;
-    text-align: center;
-    line-height: 1.2;
-}
-
-/* --- CONTENT 2 --- */
 .content-2 {
-    background: #fff;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
 
 .c2-box {
-    background: #FE7743; 
-    color: white;
+    background: #FE7743;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
 }
+.c2-box:hover { background: #e66a3a; }
+.c2-box img { width: 50px; }
 
 .content-middle {
+    grid-column: span 1;
     background: #fff;
     border-radius: 8px;
     border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     text-align: center;
-    font-weight: bold;
-    color: #555;
+    min-height: 250px;
 }
 
-/* --- CONTENT 3 --- */
 .content-3 {
+    grid-column: span 1;
     background: #fff;
     border-radius: 8px;
     border: 1px solid #ccc;
-    overflow: hidden; 
     display: flex;
-    flex-direction: column;
+    overflow: hidden;
 }
 
 .c3-image-area {
-    height: 30%; 
+    width: 40%;
     background: #333;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/model-kapal-removebg-preview.png');
-    background-size: cover;
-    background-position: center;
+}
+.c3-image-area img { width: 80%; cursor: pointer; }
+
+.c3-text-area { padding: 15px; width: 60%; font-size: 0.85rem; }
+
+/* --- 6. ADMIN FLOATING PANEL --- */
+.admin-floating-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    overflow: hidden;
 }
 
-.c3-text-area {
-    height: 70%;
-    padding: 20px;
-    overflow-y: auto; 
-    text-align: justify;
-    font-size: 0.95rem;
-    line-height: 1.6;
+.admin-panel-header {
+    background: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: move;
 }
 
-.c3-text-area::-webkit-scrollbar {
-    width: 8px;
-}
-.c3-text-area::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-.c3-text-area::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-.c3-text-area::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
-}
-/* Container Utama  End*/
+.admin-panel-body { padding: 15px; display: flex; flex-direction: column; gap: 8px; }
+.admin-panel-body input { padding: 5px; width: 100%; }
 
-/* HOMEPAGE END */
+.min-btn { background: none; border: none; color: white; cursor: pointer; }
+
+/* --- 7. MODAL GAMBAR --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content { max-width: 80%; max-height: 80%; border: 5px solid white; }
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}

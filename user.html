@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aterkia ASV | User</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <style>
+    body {
+      align-items: flex-start;
+      padding-top: 10px;
+    }
+    body.page-entry-anim {
+      overflow-x: hidden;
+    }
+  </style>
+
+  <body class="page-entry-anim">
+    <div id="imageModal" class="modal">
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="imgFull" />
+    </div>
+
+    <div class="body">
+      <nav>
+        <div class="logo">Aterolas</div>
+
+        <div class="status-container">
+          <span>STATUS :</span>
+          <div id="status-indicator" class="status-pill disconnected">
+            Disconnected
+          </div>
+        </div>
+
+        <div class="logout">
+          <a href="#" onclick="logout()" class="btn-logout">Logout</a>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="content-1">
+          <div class="c1-box">
+            <img src="assets/performance.png" alt="Roll" />
+            <span>Roll</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/indicator.png" alt="Pitch" />
+            <span>Pitch</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/health.png" alt="Yaw" />
+            <span>Yaw</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/gauge.png" alt="SOG" />
+            <span>Speed Over Ground</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/360-degrees.png" alt="Heading" />
+            <span>Heading</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/lightning.png" alt="Voltage" />
+            <span>Voltage</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/location.png" alt="Coordinate" />
+            <span>Coordinate</span>
+          </div>
+          <div class="c1-box">
+            <img src="assets/computer.png" alt="COG" />
+            <span>Course Over Ground</span>
+          </div>
+        </div>
+
+        <div class="content-2">
+          <div class="c2-box">
+            <img src="assets/compass.png" alt="Maps" />
+          </div>
+          <div class="c2-box">
+            <img src="assets/ship.png" alt="Trajectory" />
+          </div>
+          <div class="c2-box">
+            <img src="assets/waves.png" alt="Computer vision" />
+          </div>
+          <div class="c2-box">
+            <img src="assets/wind.png" alt="Photo" />
+          </div>
+        </div>
+
+        <div class="content-middle">
+          <div class="status-header">STATUS</div>
+          <div id="display-content">
+            <p>Pilih menu untuk melihat data</p>
+          </div>
+        </div>
+
+        <div class="content-3">
+          <div class="c3-image-area">
+            <img
+              src="assets/model-kapal-removebg-preview.png"
+              alt="Kapal"
+              id="shipTrigger"
+            />
+          </div>
+          <div class="c3-text-area">
+            <h3>Informasi Kapal</h3>
+            <p>Dulu, kapal ini merupakan sebuah kuda...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
